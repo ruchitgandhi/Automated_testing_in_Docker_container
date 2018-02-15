@@ -33,4 +33,10 @@ Here test is the reference to the duplicate angular container which is spun for 
 
 Duplicate container is used since angular container refers to Selenium Hub and hence hub cannot refer back to angular otherwise there would be a cyclic dependency in docker-compose. Hence duplicate angular container is spun to allow hub to access that for testing. But still the error persists.
 
+##### Some helpful links
+
+https://medium.com/@zhao.li/end-to-end-testing-angular-with-protractor-selenium-in-containers-d631edcbf13
+
+https://michelesr.github.io/thesis/dist/thesis.pdf
+
 Reference for Angular App : https://coursetro.com/posts/code/84/Setting-up-an-Angular-4-MEAN-Stack-(Tutorial)

@@ -1,0 +1,46 @@
+    version: "3"
+    services:
+      angular:
+        build: .
+        ports:
+          - "4201:4200"
+        depends_on:
+            - seleniumhub
+            - test
+      seleniumhub:
+          image: selenium/hub:latest
+          ports:
+            - 4444:4444
+          depends_on:
+            - test
+      chromenode:
+          image: selenium/node-chrome:latest
+#          ports:
+#            - 5900
+#          depends_on:
+#            - seleniumhub
+          links:
+            - seleniumhub
+          environment:
+            HUB_PORT_4444_TCP_ADDR: seleniumhub
+            HUB_PORT_4444_TCP_PORT: 4444
+      test:
+          build: .
+          ports:
+            - "4200:4200"
+#      chrome:
+#        image: selenium/node-chrome:latest
+#        volumes:
+#          - /dev/shm:/dev/shm
+#        depends_on:
+#          - hub
+#        environment:
+#          HUB_HOST: hub
+#      hub:
+#        image: selenium/hub:latest
+#        ports:
+#          - "4444:4444"
+#      chrome:
+#          image: selenium/standalone-chrome:latest
+#          ports:
+#            - 4444

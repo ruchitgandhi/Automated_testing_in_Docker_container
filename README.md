@@ -27,7 +27,7 @@ OR
 
 Failed: Angular could not be found on the page http://test:4200/. If this is not an Angular application, you may need to turn off waiting for Angular. Please see https://github.com/angular/protractor/blob/master/docs/timeouts.md#waiting-for-angular-on-page-load
 
-The error seems misleading since the same error is thrown if there is some issue with protractor test or if the base url is not accessible. Since the test runs perfectlyfine on local the issue is with accessing the URL which is a container communication issue.
+The error seems misleading since the same error is thrown if there is some issue with protractor test or if the base url is not accessible. Since the test runs perfectly fine on local the issue is with accessing the URL which is a container communication issue.
 
 Here test is the reference to the duplicate angular container which is spun for testing. Containers can communicate using names used in docker-compose file.
 

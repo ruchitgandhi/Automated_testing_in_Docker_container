@@ -24,7 +24,7 @@ exports.config = {
     print: function() {}
   },
   onPrepare() {
-    browser.baseUrl = 'http://test:4200/';
+    browser.baseUrl = 'http://172.20.0.4:4200/'; //Static IP
     require('ts-node').register({
       project: 'e2e/tsconfig.e2e.json'
     });

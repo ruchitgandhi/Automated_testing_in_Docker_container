@@ -25,6 +25,8 @@ OR
 
 The communication between the Selenium and Angular container works using the static IP as seen in the "protractor.conf.js" file. The issue to figure out is, why Docker is not able to resolve the service name to the IP address (to reach angular container using service name and not static IP), when all the posts on the Internet say so.
 
+Infact, I also tried to bringup an nginx server using docker-compose to run the ping command from there. I pinged the angular container using the service name "angular" and it was able to successfully communicate and receive data. But it is not able to run the ping command itself on the selenium server; which avoids confirmation that the selenium is able to locate angular or not. 
+
 #### ERROR:
 
 Failed: Angular could not be found on the page http://test:4200/. If this is not an Angular application, you may need to turn off waiting for Angular. Please see https://github.com/angular/protractor/blob/master/docs/timeouts.md#waiting-for-angular-on-page-load

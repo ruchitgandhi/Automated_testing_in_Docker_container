@@ -21,9 +21,11 @@ docker exec -it <container id for angular container> npm test
 2) Run docker-compose build - to build the new container
 
 3) Tag the new image to the repository on Docker Hub
+
 docker tag angular4mean_angular ruchitgandhi/angular_mean:test
 
 4) Push the new image to Docker Hub
+
 docker push ruchitgandhi/angular_mean
 
 #### Some Helpful Links:

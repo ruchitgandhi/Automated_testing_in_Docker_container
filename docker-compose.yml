@@ -1,22 +1,24 @@
     version: "3"
     services:
+#      angular:
+#        build: .
+#        ports:
+#          - "4200:4200"
+#        networks:
+#            - front
       angular:
-        build: .
+        image: ruchitgandhi/angular_mean:test
         ports:
           - "4200:4200"
-        depends_on:
-            - seleniumhub
         networks:
-            front:
-                aliases:
-                    - angular_service
+            - front
       seleniumhub:
-          image: selenium/standalone-chrome:latest
+          image: selenium/standalone-chrome-debug:latest
           ports:
-            - 4444
+            - 4444:4444
+            - 5900:5900
           networks: 
             - front
     networks:
         front:
-            driver: bridge
-    
+            driver: overlay

@@ -10,11 +10,7 @@ exports.config = {
     './e2e/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    'browserName': 'chrome',
-     'chromeOptions': {
-          args: ['no-sandbox',
-            '--disable-web-security', '--headless'],
-        },
+    'browserName': 'chrome'
   },
 //  directConnect: true,
   framework: 'jasmine',
@@ -24,8 +20,7 @@ exports.config = {
     print: function() {}
   },
   onPrepare() {
-    browser.baseUrl = 'http://172.18.0.3:4200/'; //Static IP
-//    browser.baseUrl = 'http://angular:4200/'; // Not working With service name
+    browser.baseUrl = 'http://angular:4200/';
     require('ts-node').register({
       project: 'e2e/tsconfig.e2e.json'
     });
